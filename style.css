@@ -1,20 +1,157 @@
-/* Import Google Font (Inter) for a clean, modern look */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-.chart-container {
-    width: 70%; /* Adjust width as needed */
-    margin: 20px auto; /* Center the chart and add some vertical spacing */
-    max-width: 400px; /* Prevent chart from becoming too wide */
-    position: relative; /* For responsiveness */
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5;
+    line-height: 1.6;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
 }
 
-/* Ensure the canvas scales correctly */
+.cv-container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 800px;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.personal-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 25px;
+    border: 3px solid #e0e0e0;
+}
+
+.contact-details {
+    flex-grow: 1;
+}
+
+.contact-details h1 {
+    font-size: 2.8em;
+    color: #222;
+    margin: 0;
+    font-weight: 700;
+}
+
+.contact-details p {
+    margin: 3px 0;
+    font-size: 1.0em;
+    color: #555;
+}
+
+.contact-details a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+.section-block {
+    margin-bottom: 35px;
+}
+
+.section-block h2 {
+    font-size: 1.6em;
+    color: #333;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.2em;
+    color: #444;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 0.95em;
+    color: #666;
+    margin: 0 0 10px 0;
+    font-weight: 400;
+}
+
+ul {
+    list-style: disc;
+    padding-left: 25px;
+    margin: 0;
+}
+
+ol {
+    list-style: decimal;
+    padding-left: 25px;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 6px;
+    font-size: 1.0em;
+}
+
+.job-entry,
+.edu-entry {
+    margin-bottom: 25px;
+}
+
+.project-entry {
+    margin-bottom: 30px;
+}
+
+.project-entry h3 {
+    margin-bottom: 5px;
+    font-size: 1.25em;
+}
+
+.project-entry p {
+    margin-bottom: 10px;
+}
+
+.project-entry .project-screenshot {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.chart-container {
+    width: 70%;
+    margin: 20px auto;
+    max-width: 400px;
+    position: relative;
+}
+
 canvas {
-    display: block; /* Remove extra space below canvas */
+    display: block;
     max-width: 100%;
     height: auto;
 }
 
-/* If you want to list the skills textually below the chart (as I've kept in the HTML) */
 .skills-list-text {
     margin-top: 30px;
     border-top: 1px solid #eee;
@@ -32,141 +169,25 @@ canvas {
     color: #555;
     font-weight: 500;
 }
-/* General Body Styling */
-body {
-    font-family: 'Inter', sans-serif; /* Apply the imported font */
-    margin: 0;
-    padding: 20px; /* Padding around the entire CV content */
-    background-color: #f0f2f5; /* Light grey background for the page */
-    line-height: 1.6;
-    color: #333;
-    display: flex; /* Use flexbox to center the CV container */
-    justify-content: center;
-    align-items: flex-start; /* Align content to the top */
-    min-height: 100vh; /* Ensure body takes full viewport height */
-}
 
-/* Main CV Container - mimics the fixed width of the sample output */
-.cv-container {
-    background-color: #ffffff; /* White background for the CV itself */
-    width: 100%;
-    max-width: 800px; /* Fixed width as seen in the sample */
-    padding: 40px; /* Inner padding for the CV content */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for a lifted effect */
-    border-radius: 8px; /* Slightly rounded corners */
-}
-
-/* Header Section - for Name and Contact Info */
-.personal-info {
-    display: flex; /* Use flexbox for horizontal layout */
-    align-items: center; /* Vertically align items in the center */
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee; /* Subtle separator line */
-}
-
-.profile-pic {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%; /* Makes the image circular */
-    object-fit: cover; /* Ensures the image fills the circular space */
-    margin-right: 25px; /* Space between image and text */
-    border: 3px solid #e0e0e0; /* Light border around the image */
-}
-
-.contact-details {
-    flex-grow: 1; /* Allows contact details to take up remaining space */
-}
-
-.contact-details h1 {
-    font-size: 2.8em; /* Larger font for the name */
-    color: #222; /* Darker color for the name */
-    margin: 0;
-    font-weight: 700; /* Bold */
-}
-
-.contact-details p {
-    margin: 3px 0; /* Tighten spacing between contact lines */
-    font-size: 1.0em;
-    color: #555;
-}
-
-.contact-details a {
-    color: #007bff; /* Standard blue for links */
-    text-decoration: none; /* No underline by default */
-}
-
-.contact-details a:hover {
-    text-decoration: underline; /* Underline on hover */
-}
-
-/* Section Headings (e.g., WORK EXPERIENCE, EDUCATION) */
-.section-block {
-    margin-bottom: 35px; /* Space after each main section */
-}
-
-.section-block h2 {
-    font-size: 1.6em; /* Size for main section titles */
-    color: #333;
-    text-transform: uppercase; /* Uppercase as in the sample */
-    border-bottom: 2px solid #ddd; /* Underline effect */
-    padding-bottom: 8px;
-    margin-bottom: 20px;
-    font-weight: 600; /* Semi-bold */
-}
-
-/* Sub-headings for Job Titles, University Names */
-h3 {
-    font-size: 1.2em; /* Size for sub-titles */
-    color: #444;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-weight: 600;
-}
-
-/* Dates/Timeframes */
-h4 {
-    font-size: 0.95em;
-    color: #666;
-    margin: 0 0 10px 0;
-    font-weight: 400; /* Regular weight */
-}
-
-/* List Styling (for responsibilities, skills, etc.) */
-ul {
-    list-style: disc; /* Standard bullet points */
-    padding-left: 25px; /* Indent lists */
-    margin: 0;
-}
-
-ol {
-    list-style: decimal; /* Numbered list for ordered items if any */
-    padding-left: 25px;
-    margin: 0;
-}
-
-li {
-    margin-bottom: 6px; /* Space between list items */
-    font-size: 1.0em;
-}
 #contact-me .contact-form {
-    background-color: #f9f9f9; /* Light background for the box */
+    background-color: #f9f9f9;
     padding: 25px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a "box" look */
-    max-width: 600px; /* Limit form width */
-    margin: 20px auto; /* Center the form and add space */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Space between form groups */
+    gap: 15px;
 }
 
 .contact-form .form-group {
-    margin-bottom: 10px; /* Space between form fields */
+    margin-bottom: 10px;
 }
 
 .contact-form label {
-    display: block; /* Make labels take their own line */
+    display: block;
     margin-bottom: 5px;
     font-weight: 600;
     color: #333;
@@ -180,17 +201,17 @@ li {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    font-family: 'Inter', sans-serif; /* Consistent font */
+    font-family: 'Inter', sans-serif;
     font-size: 1rem;
-    box-sizing: border-box; /* Include padding in width */
+    box-sizing: border-box;
 }
 
 .contact-form textarea {
-    resize: vertical; /* Allow vertical resizing */
+    resize: vertical;
 }
 
 .contact-form button[type="submit"] {
-    background-color: #007bff; /* Blue submit button */
+    background-color: #007bff;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -199,48 +220,17 @@ li {
     font-size: 1.1rem;
     font-weight: 500;
     transition: background-color 0.3s ease;
-    align-self: flex-start; /* Align button to the left */
+    align-self: flex-start;
 }
 
 .contact-form button[type="submit"]:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3;
 }
 
-/* Adjust the "Phone" line in your header */
 .personal-info .contact-details p {
-    margin-bottom: 5px; /* Adjust as needed */
-}
-
-/* Specific styling for job entries and education entries */
-.job-entry, .edu-entry {
-    margin-bottom: 25px;
-}
-
-/* Projects Section Styling */
-.project-entry {
-    margin-bottom: 30px;
-}
-
-.project-entry h3 {
     margin-bottom: 5px;
-    font-size: 1.25em; /* Slightly larger for project titles */
 }
 
-.project-entry p {
-    margin-bottom: 10px;
-}
-
-.project-entry .project-screenshot {
-    max-width: 100%; /* Ensure images don't overflow */
-    height: auto;
-    display: block; /* Remove extra space below image */
-    margin-top: 15px; /* Space between text and image */
-    border: 1px solid #e0e0e0; /* Light border around screenshots */
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.08); /* Subtle shadow for screenshots */
-}
-
-/* Footer Styling */
 footer {
     text-align: center;
     margin-top: 40px;
@@ -250,20 +240,19 @@ footer {
     color: #777;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .cv-container {
         padding: 20px;
     }
 
     .personal-info {
-        flex-direction: column; /* Stack image and text vertically on smaller screens */
+        flex-direction: column;
         text-align: center;
     }
 
     .profile-pic {
         margin-right: 0;
-        margin-bottom: 15px; /* Space below image */
+        margin-bottom: 15px;
     }
 
     .contact-details h1 {
