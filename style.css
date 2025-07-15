@@ -1,0 +1,215 @@
+/* Import Google Font (Inter) for a clean, modern look */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+.chart-container {
+    width: 70%; /* Adjust width as needed */
+    margin: 20px auto; /* Center the chart and add some vertical spacing */
+    max-width: 400px; /* Prevent chart from becoming too wide */
+    position: relative; /* For responsiveness */
+}
+
+/* Ensure the canvas scales correctly */
+canvas {
+    display: block; /* Remove extra space below canvas */
+    max-width: 100%;
+    height: auto;
+}
+
+/* If you want to list the skills textually below the chart (as I've kept in the HTML) */
+.skills-list-text {
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.skills-list-text h3 {
+    font-size: 1.1em;
+    margin-top: 0;
+}
+
+.skills-list-text h4 {
+    font-size: 1em;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: 500;
+}
+/* General Body Styling */
+body {
+    font-family: 'Inter', sans-serif; /* Apply the imported font */
+    margin: 0;
+    padding: 20px; /* Padding around the entire CV content */
+    background-color: #f0f2f5; /* Light grey background for the page */
+    line-height: 1.6;
+    color: #333;
+    display: flex; /* Use flexbox to center the CV container */
+    justify-content: center;
+    align-items: flex-start; /* Align content to the top */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+}
+
+/* Main CV Container - mimics the fixed width of the sample output */
+.cv-container {
+    background-color: #ffffff; /* White background for the CV itself */
+    width: 100%;
+    max-width: 800px; /* Fixed width as seen in the sample */
+    padding: 40px; /* Inner padding for the CV content */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for a lifted effect */
+    border-radius: 8px; /* Slightly rounded corners */
+}
+
+/* Header Section - for Name and Contact Info */
+.personal-info {
+    display: flex; /* Use flexbox for horizontal layout */
+    align-items: center; /* Vertically align items in the center */
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee; /* Subtle separator line */
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image fills the circular space */
+    margin-right: 25px; /* Space between image and text */
+    border: 3px solid #e0e0e0; /* Light border around the image */
+}
+
+.contact-details {
+    flex-grow: 1; /* Allows contact details to take up remaining space */
+}
+
+.contact-details h1 {
+    font-size: 2.8em; /* Larger font for the name */
+    color: #222; /* Darker color for the name */
+    margin: 0;
+    font-weight: 700; /* Bold */
+}
+
+.contact-details p {
+    margin: 3px 0; /* Tighten spacing between contact lines */
+    font-size: 1.0em;
+    color: #555;
+}
+
+.contact-details a {
+    color: #007bff; /* Standard blue for links */
+    text-decoration: none; /* No underline by default */
+}
+
+.contact-details a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Section Headings (e.g., WORK EXPERIENCE, EDUCATION) */
+.section-block {
+    margin-bottom: 35px; /* Space after each main section */
+}
+
+.section-block h2 {
+    font-size: 1.6em; /* Size for main section titles */
+    color: #333;
+    text-transform: uppercase; /* Uppercase as in the sample */
+    border-bottom: 2px solid #ddd; /* Underline effect */
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    font-weight: 600; /* Semi-bold */
+}
+
+/* Sub-headings for Job Titles, University Names */
+h3 {
+    font-size: 1.2em; /* Size for sub-titles */
+    color: #444;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+/* Dates/Timeframes */
+h4 {
+    font-size: 0.95em;
+    color: #666;
+    margin: 0 0 10px 0;
+    font-weight: 400; /* Regular weight */
+}
+
+/* List Styling (for responsibilities, skills, etc.) */
+ul {
+    list-style: disc; /* Standard bullet points */
+    padding-left: 25px; /* Indent lists */
+    margin: 0;
+}
+
+ol {
+    list-style: decimal; /* Numbered list for ordered items if any */
+    padding-left: 25px;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 6px; /* Space between list items */
+    font-size: 1.0em;
+}
+
+/* Specific styling for job entries and education entries */
+.job-entry, .edu-entry {
+    margin-bottom: 25px;
+}
+
+/* Projects Section Styling */
+.project-entry {
+    margin-bottom: 30px;
+}
+
+.project-entry h3 {
+    margin-bottom: 5px;
+    font-size: 1.25em; /* Slightly larger for project titles */
+}
+
+.project-entry p {
+    margin-bottom: 10px;
+}
+
+.project-entry .project-screenshot {
+    max-width: 100%; /* Ensure images don't overflow */
+    height: auto;
+    display: block; /* Remove extra space below image */
+    margin-top: 15px; /* Space between text and image */
+    border: 1px solid #e0e0e0; /* Light border around screenshots */
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08); /* Subtle shadow for screenshots */
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    font-size: 0.85em;
+    color: #777;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cv-container {
+        padding: 20px;
+    }
+
+    .personal-info {
+        flex-direction: column; /* Stack image and text vertically on smaller screens */
+        text-align: center;
+    }
+
+    .profile-pic {
+        margin-right: 0;
+        margin-bottom: 15px; /* Space below image */
+    }
+
+    .contact-details h1 {
+        font-size: 2.2em;
+    }
+
+    .section-block h2 {
+        font-size: 1.4em;
+    }
+}
