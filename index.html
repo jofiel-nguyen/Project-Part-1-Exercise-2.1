@@ -147,7 +147,9 @@
                 </article>
             </section>
 
-            <hr> <section class="section-block" id="contact-me">
+            <hr>
+
+            <section class="section-block" id="contact-me">
                 <h2>Contact Me</h2>
                 <p>I'm always open to new opportunities and collaborations. Feel free to reach out using the form below!</p>
                 <form action="your_server_endpoint" method="POST" class="contact-form">
@@ -181,7 +183,9 @@
                 </form>
             </section>
 
-            <hr> <section class="section-block">
+            <hr>
+
+            <section class="section-block">
                 <h2>Acknowledgements</h2>
                 <p>This digital CV structure and styling were inspired by modern CV design principles and adapted with the help of online resources.</p>
             </section>
@@ -195,22 +199,18 @@
 
     </div>
     <script>
-        // Dynamically update the current year in the footer
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // --- Chart.js for Skills Pie Chart ---
         const ctx = document.getElementById('skillsPieChart').getContext('2d');
 
-        // Define your skill data based on categories
-        // The numbers represent the count of skills in each category
         const skillsData = {
             labels: ['Data-Related Skills', 'Web Technologies', 'Soft Skills'],
             datasets: [{
-                data: [5, 2, 1], // Corresponding counts: 5 Data-related, 2 Web, 1 Soft
+                data: [5, 2, 1],
                 backgroundColor: [
-                    'rgba(54, 162, 235, 0.8)', // Blue for Data
-                    'rgba(255, 99, 132, 0.8)',  // Red for Web
-                    'rgba(75, 192, 192, 0.8)'   // Green for Soft
+                    'rgba(54, 162, 235, 0.8)',
+                    'rgba(255, 99, 132, 0.8)',
+                    'rgba(75, 192, 192, 0.8)'
                 ],
                 borderColor: [
                     'rgba(54, 162, 235, 1)',
@@ -221,16 +221,15 @@
             }]
         };
 
-        // Create the pie chart
         const skillsPieChart = new Chart(ctx, {
             type: 'pie',
             data: skillsData,
             options: {
                 responsive: true,
-                maintainAspectRatio: true, // Keep aspect ratio
+                maintainAspectRatio: true,
                 plugins: {
                     legend: {
-                        position: 'bottom', // Position legend at the bottom
+                        position: 'bottom',
                         labels: {
                             font: {
                                 size: 14,
@@ -267,8 +266,7 @@
                         }
                     }
                 },
-          
-                aspectRatio: 1.5 // e.g., 1.5 makes it wider than it is tall
+                aspectRatio: 1.5
             }
         });
     </script>
